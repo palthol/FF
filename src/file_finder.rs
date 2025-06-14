@@ -1,5 +1,18 @@
+/**
+ * File finder module
+ * 
+ * Provides functionality for searching files in a directory tree
+ * and opening them in VS Code
+ */
+
 use std::path::{Path, PathBuf};
 use walkdir::WalkDir;
+
+
+/**
+ * FileFinder is responsible for locating files that match search criteria
+ * and providing relative paths for display
+ */
 
 pub struct FileFinder {
     base_directory: PathBuf,

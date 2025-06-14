@@ -1,3 +1,12 @@
+/**
+ * rust-ff: A terminal-based file finder utility
+ * 
+ * This application provides a TUI for quickly finding and opening files.
+ * It uses ratatui for the interface and allows for real-time searching
+ * with keyboard navigation.
+ */
+
+
 mod file_finder;
 
 use crossterm::{
@@ -15,6 +24,11 @@ use ratatui::{
     Terminal,
 };
 use std::{env, io, path::PathBuf, time::{Duration, Instant}}; // Added time imports
+
+/**
+ * Main application state structure
+ * Holds the current search keyword, matched files, and UI state
+ */
 
 struct App {
     keyword: String,
@@ -71,6 +85,11 @@ impl App {
         Ok(())
     }
 }
+
+/**
+ * Main application entry point
+ * Sets up the terminal, creates application state, and runs the main event loop
+ */
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Get initial keyword from command line args if provided
